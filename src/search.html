@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<head>
+    <title>aisudocserv::search</title>
+    <!-- <link rel="stylesheet" href="chota.min.css"> -->
+    <!-- TODO: try to embed css -->
+</head>
+
+<body>
+    <div class="row">
+        <input type="search" id="search_textbox" class="col-4"> </input>
+        <button type="button" onclick="updateQuery()" class="col-1"> Search </button>
+        <div class="col"> </div>
+    </div>
+    <ul>
+        {% for e in list -%}
+        <li><a href="/{{ e[1] }}">{{ e[0] }}</a></li>
+        {%- endfor %}
+    </ul>
+    <script>
+        function updateQuery() {
+            let input = document.getElementById("search_textbox");
+            window.location.search = ('?q=' + input.value);
+        }
+    </script>
+    <style>
+        .row {
+            padding: 1%;
+        }
+    </style>
+</body>
+
+</html>

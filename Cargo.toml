@@ -1,0 +1,23 @@
+[package]
+name = "aisudocserv"
+version = "0.1.0"
+edition = "2021"
+authors = ["aisuneko"]
+description = "Small file server/search engine for local HTML docs"
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/aisuneko/aisudocserv"
+repository = "https://github.com/aisuneko/aisudocserv"
+
+[dependencies]
+regex = "1.10.3"
+tantivy = "0.21.1"
+tera = "1.19.1"
+tokio = { version = "1.35.1", features = ["full"]}
+walkdir = "2.4.0"
+warp = "0.3.6"
+
+[profile.release]
+strip = true 
+lto = true
+#codegen-units = 1
